@@ -8,6 +8,10 @@ router.route('/')
     .post(verifyToken, authorize("add_project"), upload.any(), projectServices.createProject)
     .get(verifyToken, authorize("view_projects"), projectServices.getAllProjects);
 
+router.route('/schema')
+    .get(verifyToken, authorize("showSchema"),
+        projectServices.showSchema);
+
 router.route('/:id')
     .get(verifyToken, authorize("view_projects"), projectServices.getSpecificProject)
     .put(verifyToken, authorize("update_project"), upload.any(), projectServices.updateSpecificProject);
@@ -25,16 +29,14 @@ router.route('/:id/dates')
 
 router.route('/:id/videos')
     .put(verifyToken, authorize("edit_project_dates"),
-        upload.fields([
-            { name: 'aerial_view_file', maxCount: 1 },
-            { name: 'illustrative_view_file', maxCount: 1 },
-        ]),
+        upload.any(),
         projectServices.updateProjectVideos);
 
 router.route('/:id/values')
     .put(verifyToken, authorize("edit_project_values"),
         upload.any(),
         projectServices.AddProjectValues);
+
 
 router.put('/soft-delete/:id', verifyToken, authorize("delete_project"), projectServices.softDeleteProject);
 

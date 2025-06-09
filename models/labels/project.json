@@ -1,0 +1,165 @@
+{
+    "name": {
+        "label": "اسم المشروع"
+    },
+    "contracting_authority": {
+        "label": "جهة التعاقد"
+    },
+    "site_receipt_file": {
+        "label": "محضر استلام الموقع",
+        "subKeys": {
+            "fileName": {
+                "label": "اسم الملف"
+            },
+            "fileUrl": {
+                "label": "رابط الملف"
+            }
+        }
+    },
+    "trust_approval_file": {
+        "label": "تصديق الامانة",
+        "subKeys": {
+            "fileName": {
+                "label": "اسم الملف"
+            },
+            "fileUrl": {
+                "label": "رابط الملف"
+            }
+        }
+    },
+    "project_financials": {
+        "label": "البيانات المالية للمشروع",
+        "subKeys": {
+            "value": {
+                "label": "القيمة"
+            },
+            "file": {
+                "label": "الملف"
+            },
+            "registration_date": {
+                "label": "تاريخ التسجيل"
+            }
+        }
+    },
+    "status": {
+        "label": "حالة المشروع"
+    },
+    "location": {
+        "label": "مكان المشروع"
+    },
+    "start_date": {
+        "label": "تاريخ بدأ المشروع"
+    },
+    "end_date": {
+        "label": "تاريخ انتهاء المشروع"
+    },
+    "water_connection": {
+        "label": "ربط المياه",
+        "subKeys": {
+            "date": {
+                "label": "تاريخ الربط"
+            },
+            "file": {
+                "label": "الملف"
+            },
+            "addedBy": {
+                "label": "من قام بالربط"
+            }
+        }
+    },
+    "electricity_connection": {
+        "label": "ربط الكهرباء",
+        "subKeys": {
+            "date": {
+                "label": "تاريخ الربط"
+            },
+            "file": {
+                "label": "الملف"
+            },
+            "addedBy": {
+                "label": "من قام بالربط"
+            }
+        }      
+    },
+    "irrigation_connection": {
+        "label": "ربط  الري",
+        "subKeys": {
+            "date": {
+                "label": "تاريخ الربط"
+            },
+            "file": {
+                "label": "الملف"
+            },
+            "addedBy": {
+                "label": "من قام بالربط"
+            }
+        }
+    },
+    "drainage_connection": {
+        "label": "ربط الصرف الصحي",
+        "subKeys": {
+            "date": {
+                "label": "تاريخ الربط"
+            },
+            "file": {
+                "label": "الملف"
+            },
+            "addedBy": {
+                "label": "من قام بالربط"
+            }
+        }
+    },
+    "entity_name": {
+        "label": "اسم الجهة"
+    },
+    "estimated_budget": {
+        "label": "الميزانية التقديرية"
+    },
+    "estimated_budget_file": {
+        "label": "ملف الموازونة التقديرية",
+        "subKeys": {
+            "fileName": {
+                "label": "اسم الملف"
+            },
+            "fileUrl": {
+                "label": "رابط الملف"
+            }
+        }
+    },
+    "protocols": {
+        "label": "بروتوكلات المشروع",
+        "subKeys": {
+            "value": {
+                "label": "القيمة"
+            },
+            "file": {
+                "label": "الملف"
+            },
+            "registration_date": {
+                "label": "تاريخ التسجيل"
+            }
+        }
+    },
+    "aerial_view_file": {
+        "label": "العرض الجوي",
+        "subKeys": {
+            "fileName": {
+                "label": "اسم الملف"
+            },
+            "fileUrl": {
+                "label": "رابط الملف"
+            }
+        }
+    },
+    "illustrative_view_file": {
+        "label": "العرض التصويري",
+        "subKeys": {
+            "fileName": {
+                "label": "اسم الملف"
+            },
+            "fileUrl": {
+                "label": "رابط الملف"
+            }
+        }
+    }
+}

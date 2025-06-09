@@ -8,7 +8,9 @@ const { request } = require('express');
 
 exports.createEstimate = asyncHandler(async (req, res, next) => {
     // Validate required fields
-    const requiredFields = ['project', 'company', 'name', 'value', 'area', 'battalionProofDocument', 'quantitySurveyFile', 'approvalCertificateFile', 'shopDrawingsDWGFile', 'shopDrawingsPDFFile'];
+    // appent estimateType
+
+    const requiredFields = ['project', 'company', 'name', 'value', 'area', 'battalionProofDocument', 'quantitySurveyFile', 'approvalCertificateFile', 'shopDrawingsDWGFile', 'shopDrawingsPDFFile', 'ironPrice', 'cementPrice', 'estimateType', 'lengthOfLinearMeter'];
     for (const field of requiredFields) {
         if (!req.body[field]) {
             if (!req.files.filter(file => file.fieldname === field)) {
@@ -17,7 +19,7 @@ exports.createEstimate = asyncHandler(async (req, res, next) => {
             }
         }
     }
-
+    console.log("body", req.body.estimateType);
     // Create the Estimate
     const newEstimate = await estimateModel.create({
         project: req.body.project,
@@ -25,6 +27,10 @@ exports.createEstimate = asyncHandler(async (req, res, next) => {
         name: req.body.name,
         value: req.body.value,
         area: req.body.area,
+        cementPrice: req.body.cementPrice,
+        ironPrice: req.body.ironPrice,
+        estimateType: req.body.estimateType,
+        lengthOfLinearMeter: req.body.lengthOfLinearMeter,
         createdBy: req.user._id
     });
 
@@ -32,7 +38,6 @@ exports.createEstimate = asyncHandler(async (req, res, next) => {
     try {
         const updatedFields = {};
         for (const file of req.files) {
-            console.log(file);
             const fileName = file.originalname;
             const fileUrl = await saveFile(file, "estimate", newEstimate._id.toString(), file.fieldname);
             updatedFields[file.fieldname] = {
@@ -137,7 +142,7 @@ exports.updateEstimateStep = asyncHandler(async (req, res, next) => {
             console.log(req.body);
             let updateFields = {};
             let changes = [];
-            ['project', 'company', 'name', 'value', 'area', 'battalionProofDocument', 'quantitySurveyFile', 'approvalCertificateFile', 'shopDrawingsDWGFile', 'shopDrawingsPDFFile'].forEach(field => {
+            ['project', 'company', 'name', 'value', 'area', 'battalionProofDocument', 'quantitySurveyFile', 'approvalCertificateFile', 'shopDrawingsDWGFile', 'shopDrawingsPDFFile', 'cementPrice', 'ironPrice', 'estimateType', 'offersAndPriceAnalisisFile', 'lengthOfLinearMeter'].forEach(field => {
                 if (req.body[field] && req.body[field] !== estimate[field]) {
                     changes.push({ action: req.body[field] == 'null' ? 'حذف' : 'تعديل', field, oldValue: estimate[field], newValue: req.body[field] });
                     updateFields[field] = req.body[field] === 'null' ? JSON.parse(req.body[field]) : req.body[field];
@@ -178,7 +183,7 @@ exports.updateEstimateStep = asyncHandler(async (req, res, next) => {
             });
         }
         case 2: {
-            const requiredFields = ['estimateValueForManagement', 'estimateNumber'];
+            const requiredFields = ['estimateNumber'];
             for (const field of requiredFields) {
                 if (!req.body[field]) {
                     if (!req.files.filter(file => file.fieldname === field)) {
@@ -187,7 +192,7 @@ exports.updateEstimateStep = asyncHandler(async (req, res, next) => {
                     }
                 }
             }
-            ['estimateValueForManagement', 'estimateNumber'].forEach(field => {
+            ['value_normal', 'value_electric', 'value_ac', 'value_fire', 'value_plumbing', 'value_maintenance', 'duration_normal', 'duration_electric', 'duration_ac', 'duration_fire', 'duration_plumbing', 'duration_maintenance', 'estimateNumber'].forEach(field => {
                 if (field === 'estimateNumber' && estimate[field] && !isAdmin) {
                     return next(new ApiError('لا يمكنك تعديل رقم المقايسة', 400));
                 }
@@ -218,7 +223,7 @@ exports.updateEstimateStep = asyncHandler(async (req, res, next) => {
             if (!isAdmin && (!estimate.estimateNumber || !estimate.estimateValueForManagement)) {
                 return res.status(400).json({ message: 'يجب إكمال خطوة الادراة أولاً' });
             }
-            const requiredFields = ['estimateValueForAuthority', 'ironPrice', 'cementPrice'];
+            const requiredFields = [];
             for (const field of requiredFields) {
                 if (!req.body[field]) {
                     if (!req.files.filter(file => file.fieldname === field)) {
@@ -227,7 +232,9 @@ exports.updateEstimateStep = asyncHandler(async (req, res, next) => {
                     }
                 }
             }
-            ['estimateValueForAuthority', 'ironPrice', 'cementPrice'].forEach(field => {
+            ['value_authority_normal', 'value_authority_electric', 'value_authority_ac', 'value_authority_fire', 'value_authority_plumbing', 'value_authority_maintenance', 'duration_authority_normal', 'duration_authority_electric', 'duration_authority_ac', 'duration_authority_fire', 'duration_authority_plumbing', 'duration_authority_maintenance'
+
+            ].forEach(field => {
                 if (req.body[field] && req.body[field] !== estimate[field]) {
                     changes.push({ action: estimate[field] ? "تعديل" : "اضافة", field, oldValue: estimate[field], newValue: req.body[field] });
                     updateFields[field] = req.body[field];

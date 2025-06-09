@@ -1,0 +1,127 @@
+{
+    "project": {
+    "label": "المشروع"
+    },
+    "itemsCount": {
+    "label": "عدد العناصر"
+    },
+    "v1": {
+    "label": "الإصدار الأول",
+    "subKeys": {
+    "title": {
+    "label": "العناصر"
+    },
+    "count": {
+    "label": "العدد"
+    },
+    "files": {
+    "label": "الملفات",
+    "subKeys": {
+    "scan": {
+    "label": "ملف الماسح الضوئي",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+    "zip": {
+    "label": "ملف مضغوط",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "v2": {
+    "label": "الإصدار الثاني",
+    "subKeys": {
+    "title": {
+    "label": "العناصر"
+    },
+    "count": {
+    "label": "العدد"
+    },
+    "files": {
+    "label": "الملفات",
+    "subKeys": {
+    "scan": {
+    "label": "ملف الماسح الضوئي",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+    "zip": {
+    "label": "ملف مضغوط",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "isDeleted": {
+    "label": "تم الحذف"
+    },
+    "deletedBy": {
+    "label": "تم الحذف بواسطة"
+    },
+    "deletedAt": {
+    "label": "تاريخ الحذف"
+    },
+    "updateHistory": {
+    "label": "سجل التعديلات",
+    "subKeys": {
+    "updatedBy": {
+    "label": "تم التعديل بواسطة"
+    },
+    "updatedAt": {
+    "label": "تاريخ التعديل"
+    },
+    "changes": {
+    "label": "التغييرات",
+    "subKeys": {
+    "action": {
+    "label": "الإجراء"
+    },
+    "field": {
+    "label": "اسم الحقل"
+    },
+    "oldValue": {
+    "label": "القيمة القديمة"
+    },
+    "newValue": {
+    "label": "القيمة الجديدة"
+    }
+    }
+    }
+    }
+    },
+    "createdAt": {
+    "label": "تاريخ الإنشاء"
+    },
+    "updatedAt": {
+    "label": "تاريخ آخر تعديل"
+    }
+    }

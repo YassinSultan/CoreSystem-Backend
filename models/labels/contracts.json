@@ -1,0 +1,86 @@
+{
+    "estimate": {
+    "label": "اسم المقايسة",
+    "subKeys": {
+    "_id": {
+    "label": "كود"
+    }
+    }
+    },
+
+    "contract_cancel": {
+    "label": "إلغاء العقد"
+    },
+
+    "contract_file": {
+    "label": "ملف العقد",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+
+    "contract_value": {
+    "label": "قيمة العقد"
+    },
+
+    "isDeleted": {
+    "label": "تم الحذف"
+    },
+
+    "deletedBy": {
+    "label": "تم الحذف بواسطة",
+    "subKeys": {
+    "_id": {
+    "label": "كود"
+    }
+    }
+    },
+
+    "deletedAt": {
+    "label": "تاريخ الحذف"
+    },
+    "updateHistory": {
+    "label": "تاريخ التعديلات",
+    "subKeys": {
+    "updatedBy": {
+    "label": "تم التعديل بواسطة",
+    "subKeys": {
+    "_id": {
+    "label": "الكود"
+    }
+    }
+    },
+    "updatedAt": {
+    "label": "تاريخ التعديل"
+    },
+    "changes": {
+    "label": "قائمة التعديلات",
+    "subKeys": {
+    "action": {
+    "label": "الإجراء"
+    },
+    "field": {
+    "label": "اسم الحقل"
+    },
+    "oldValue": {
+    "label": "القيمة القديمة"
+    },
+    "newValue": {
+    "label": "القيمة الجديدة"
+    }
+    }
+    }
+    }
+    },
+    "createdAt": {
+    "label": "تاريخ الإنشاء"
+    },
+    "updatedAt": {
+    "label": "آخر تحديث"
+    }
+    }

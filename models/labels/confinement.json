@@ -1,0 +1,96 @@
+{
+    "estimate": {
+        "label": "اسم القايسة"
+    },
+
+    "value": {
+        "label": "القيمة"
+    },
+
+    "contractFileDWG": {
+        "label": "ملف العقد DWG",
+        "subKeys": {
+            "fileName": {
+                "label": "اسم الملف"
+            },
+            "fileUrl": {
+                "label": "رابط الملف"
+            }
+        }
+    },
+
+    "contractFileExcel": {
+        "label": "ملف العقد Excel",
+        "subKeys": {
+            "fileName": {
+                "label": "اسم الملف"
+            },
+            "fileUrl": {
+                "label": "رابط الملف"
+            }
+        }
+    },
+
+    "contractFilePdf": {
+        "label": "ملف العقد PDF",
+        "subKeys": {
+            "fileName": {
+                "label": "اسم الملف"
+            },
+            "fileUrl": {
+                "label": "رابط الملف"
+            }
+        }
+    },
+
+    "isDeleted": {
+        "label": "تم الحذف"
+    },
+
+    "deletedBy": {
+        "label": "تم الحذف بواسطة",
+        "subKeys": {
+            "userName": {
+                "label": "اسم المستخدم"
+            }
+        }
+    },
+
+    "deletedAt": {
+        "label": "تاريخ الحذف"
+    },
+    
+    "updateHistory": {
+        "label": "تاريخ التحديث",
+        "subKeys": {
+            "updatedBy": {
+                "label": "تم التحديث بواسطة",
+                "subKeys": {
+                    "userName": {
+                        "label": "اسم المستخدم"
+                    }
+                }
+            },
+            "updatedAt": {
+                "label": "تاريخ التحديث"
+            },
+            "changes": {
+                "label": "التغييرات",
+                "subKeys": {
+                    "action": {
+                        "label": "الإجراء"
+                    },
+                    "field": {
+                        "label": "اسم الحقل المعدل"
+                    },
+                    "oldValue": {
+                        "label": "القيمة القديمة"
+                    },
+                    "newValue": {
+                        "label": "القيمة الجديدة"
+                    }
+                }
+            }
+        }
+    }
+}

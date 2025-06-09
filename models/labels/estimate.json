@@ -1,0 +1,150 @@
+{
+    "project": {
+    "label": "المشروع"
+    },
+
+    "company": {
+    "label": "الشركة"
+    },
+
+    "name": {
+    "label": "اسم المقايسة"
+    },
+
+    "value": {
+    "label": "قيمة المقايسة"
+    },
+
+    "area": {
+    "label": "المسطح"
+    },
+
+    "battalionProofDocument": {
+    "label": "مستند اثبات الكتيبة",
+    "subKeys": {
+    "fileName": { "label": "اسم الملف" },
+    "fileUrl": { "label": "رابط الملف" }
+    }
+    },
+
+    "quantitySurveyFile": {
+    "label": "جدول الكتيبة Excel",
+    "subKeys": {
+    "fileName": { "label": "اسم الملف" },
+    "fileUrl": { "label": "رابط الملف" }
+    }
+    },
+
+    "approvalCertificateFile": {
+    "label": "شهادة الاعتماد",
+    "subKeys": {
+    "fileName": { "label": "اسم الملف" },
+    "fileUrl": { "label": "رابط الملف" }
+    }
+    },
+
+    "shopDrawingsDWGFile": {
+    "label": "اللوحات التنفيذية DWG",
+    "subKeys": {
+    "fileName": { "label": "اسم الملف" },
+    "fileUrl": { "label": "رابط الملف" }
+    }
+    },
+
+    "shopDrawingsPDFFile": {
+    "label": "اللوحات التنفيذية PDF",
+    "subKeys": {
+    "fileName": { "label": "اسم الملف" },
+    "fileUrl": { "label": "رابط الملف" }
+    }
+    },
+
+    "estimateValueForManagement": {
+    "label": "قيمة المقايسة للادارة"
+    },
+
+    "estimateNumber": {
+    "label": "رقم المقايسة"
+    },
+
+    "estimateValueForAuthority": {
+    "label": "قيمة المقايسة للهيئة"
+    },
+
+    "ironPrice": {
+    "label": "سعر الحديد"
+    },
+
+    "cementPrice": {
+    "label": "سعر الاسمنت"
+    },
+
+    "createdBy": {
+    "label": "تم الإنشاء بواسطة"
+    },
+
+    "isCancelled": {
+    "label": "إلالغاء"
+    },
+
+    "cancellationFile": {
+    "label": "ملف الإلغاء",
+    "subKeys": {
+    "fileName": { "label": "اسم الملف" },
+    "fileUrl": { "label": "رابط الملف" }
+    }
+    },
+
+    "isContracted": {
+    "label": "تم التعاقد"
+    },
+
+    "contractNotificationFile": {
+    "label": "إخطار التعاقد",
+    "subKeys": {
+    "fileName": { "label": "اسم الملف" },
+    "fileUrl": { "label": "رابط الملف" }
+    }
+    },
+
+    "contractValue": {
+    "label": "قيمة التعاقد"
+    },
+
+    "completionProcedureName": {
+    "label": "اسم إجراء التمام"
+    },
+
+    "completionReason": {
+    "label": "سبب تمام المقايسة"
+    },
+
+    "isDeleted": {
+    "label": "تم الحذف"
+    },
+
+    "deletedBy": {
+    "label": "تم الحذف بواسطة"
+    },
+
+    "deletedAt": {
+    "label": "تاريخ الحذف"
+    },
+
+    "updateHistory": {
+    "label": "تاريخ التعديل",
+    "subKeys": {
+    "updatedBy": { "label": "تم التعديل بواسطة" },
+    "updatedAt": { "label": "تاريخ التعديل" },
+    "changes": {
+    "label": "التغييرات",
+    "subKeys": {
+    "action": { "label": "الإجراء" },
+    "field": { "label": "اسم الحقل المعدل" },
+    "oldValue": { "label": "القيمة القديمة" },
+    "newValue": { "label": "القيمة الجديدة" }
+    }
+    }
+    }
+    }
+}

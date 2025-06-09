@@ -1,0 +1,59 @@
+{
+    "tafwid": {
+    "label": "رقم التفويض"
+    },
+
+    "policyNumber": {
+    "label": "رقم البوليصة"
+    },
+
+    "policyDate": {
+    "label": "تاريخ البوليصة"
+    },
+
+    "items": {
+    "label": "العناصر",
+    "subKeys": {
+    "receivingCompany": {
+    "label": "الشركة المستلمة"
+    },
+    "steelDiameter": {
+    "label": "قطر الحديد"
+    },
+    "quantityPerDiameter": {
+    "label": "الكمية لكل قطر"
+    },
+    "companyRecieveFile": {
+    "label": "ملف استلام الشركة",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    }
+    }
+    },
+
+    "totalQuantity": {
+    "label": "إجمالي الكمية"
+    },
+
+    "policyFile": {
+    "label": "ملف البوليصة",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+    
+    "officer": {
+    "label": "الضابط المسؤول"
+    }
+    }

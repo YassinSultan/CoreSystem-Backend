@@ -1,0 +1,60 @@
+{
+    "registrationNumber": {
+    "label": "رقم القيد"
+    },
+    "projectId": {
+    "label": "المشروع المرتبط"
+    },
+    "filePDF": {
+    "label": "ملف PDF"
+    },
+    "fileWord": {
+    "label": "ملف Word"
+    },
+    "subject": {
+    "label": "موضوع الخطاب"
+    },
+    "createdBy": {
+    "label": "أنشئ بواسطة"
+    },
+    "isDeleted": {
+    "label": "تم الحذف؟"
+    },
+    "deletedBy": {
+    "label": "تم الحذف بواسطة"
+    },
+    "deletedAt": {
+    "label": "تاريخ الحذف"
+    },
+    "updateHistory": {
+    "label": "سجل التعديلات",
+    "subKeys": {
+    "updatedBy": {
+    "label": "تم التعديل بواسطة"
+    },
+    "updatedAt": {
+    "label": "تاريخ التعديل"
+    },
+    "changes": {
+    "label": "التغييرات",
+    "subKeys": {
+    "field": {
+    "label": "الحقل المعدل"
+    },
+    "oldValue": {
+    "label": "القيمة القديمة"
+    },
+    "newValue": {
+    "label": "القيمة الجديدة"
+    }
+    }
+    }
+    }
+    },
+    "createdAt": {
+    "label": "تاريخ الإنشاء"
+    },
+    "updatedAt": {
+    "label": "آخر تعديل"
+    }
+    }

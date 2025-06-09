@@ -1,23 +1,17 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const fileSchema = require("./sharedSchemas/fileSchema");
 
-const outgoingLetterSchema = new mongoose.Schema({
-    // رقم القيد
-    registrationNumber: {
-        type: String, required: [true, 'رقم القيد مطلوب']
-    },
-    // ربط مع  المشروع
-    projectId: { type: mongoose.Schema.Types.ObjectId, ref: 'Project', },
-    // الملفات
-    filePDF: { type: String },
-    fileWord: { type: String },
-    // موضوع الخطاب
-    subject: {
-        type: String, required: [true, 'موضوع الخطاب مطلوب']
-    },
-    createdBy: {
+const confinementSchema = new mongoose.Schema({
+    estimate: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'estimate',
     },
+    value: {
+        type: Number
+    },
+    contractFileDWG: fileSchema,
+    contractFileExcel: fileSchema,
+    contractFilePdf: fileSchema,
     isDeleted: {
         type: Boolean, default: false
     },
@@ -33,6 +27,11 @@ const outgoingLetterSchema = new mongoose.Schema({
             updatedAt: { type: Date, default: Date.now },
             changes: [
                 {
+                    action: {
+                        type: String,
+                        enum: ["اضافة", "تعديل", "حذف"],
+                        default: "تعديل"
+                    },
                     field: { type: String, required: true },  // اسم الحقل المعدل
                     oldValue: { type: mongoose.Schema.Types.Mixed, default: null },  // القيمة القديمة
                     newValue: { type: mongoose.Schema.Types.Mixed, default: null }   // القيمة الجديدة
@@ -42,4 +41,5 @@ const outgoingLetterSchema = new mongoose.Schema({
     ],
 }, { timestamps: true });
 
-module.exports = mongoose.model('OutgoingLetter', outgoingLetterSchema);
+
+module.exports = mongoose.model('confinement', confinementSchema);

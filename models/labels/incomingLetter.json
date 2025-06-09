@@ -1,0 +1,71 @@
+{
+    "registrationNumber": {
+    "label": "رقم القيد"
+    },
+    "registrationType": {
+    "label": "نوع المكاتبة"
+    },
+    "projectId": {
+    "label": "المشروع المرتبط"
+    },
+    "subject": {
+    "label": "موضوع الخطاب"
+    },
+    "attachments": {
+    "label": "الملحقات",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+    "createdBy": {
+    "label": "تم الإنشاء بواسطة"
+    },
+    "isDeleted": {
+    "label": "تم الحذف"
+    },
+    "deletedBy": {
+    "label": "تم الحذف بواسطة"
+    },
+    "deletedAt": {
+    "label": "تاريخ الحذف"
+    },
+    "updateHistory": {
+    "label": "سجل التعديلات",
+    "subKeys": {
+    "updatedBy": {
+    "label": "تم التعديل بواسطة"
+    },
+    "updatedAt": {
+    "label": "تاريخ التعديل"
+    },
+    "changes": {
+    "label": "التعديلات",
+    "subKeys": {
+    "action": {
+    "label": "الإجراء"
+    },
+    "field": {
+    "label": "اسم الحقل"
+    },
+    "oldValue": {
+    "label": "القيمة القديمة"
+    },
+    "newValue": {
+    "label": "القيمة الجديدة"
+    }
+    }
+    }
+    }
+    },
+    "createdAt": {
+    "label": "تاريخ الإنشاء"
+    },
+    "updatedAt": {
+    "label": "تاريخ آخر تعديل"
+    }
+    }

@@ -8,7 +8,12 @@ const { request } = require('express');
 const ApiError = require('../utils/apiError');
 const Project = require('../models/projectModel');
 const mongoose = require('mongoose');
-
+const projectJSON = require('../models/labels/project.json');
+const MaterialModel = require('../models/baseMaterial');
+const SupplyOrderModel = require('../models/supplyOrdersModel');
+const EstimateModel = require('../models/estimateModel');
+const contractsModel = require('../models/contractsModel');
+const supplyOrdersModel = require('../models/supplyOrdersModel');
 /**
  * @description Create project
  * @route /api/v1/project
@@ -179,63 +184,83 @@ exports.updateProjectVideos = asyncHandler(async (req, res, next) => {
     if (!project) {
         return next(new ApiError('لا يوجد هذا المشروع', 404));
     }
-
-    const userId = req.user.id; // Assuming user info is available in req.user
+    if (project.isDeleted) {
+        return next(new ApiError('لا يمكن تعديل مشروع تم حذفه من قبل', 404));
+    }
     const changes = []; // لتخزين التعديلات
+    let updateFields = {};
+    ['illustrative_view_file', 'aerial_view_file'].forEach(field => {
+        if (req.body[field] !== undefined) {
+            const newValue = req.body[field] === 'null' ? null : req.body[field];
+            const oldValue = project[field];
 
-    // Helper function to handle file updates
-    const handleFileUpdate = async (fileField, fileType) => {
-        if (req.files && req.files[fileField]) {
-            try {
-                const file = req.files[fileField][0];
-                const newFileUrl = await saveFile(file, "projects", id, fileType);
-                const oldFile = project[fileField];
-
-                project[fileField] = {
-                    fileUrl: newFileUrl,
-                    fileName: file.originalname
-                };
-
-                console.log(`📂 تم رفع ملف جديد لـ ${fileField}: ${newFileUrl}`);
-
+            if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
                 changes.push({
-                    action: oldFile ? "تعديل" : "اضافة",
-                    field: fileField,
-                    oldValue: oldFile,
-                    newValue: newFileUrl
+                    action: newValue === null ? 'حذف' : 'تعديل',
+                    field,
+                    oldValue,
+                    newValue
                 });
-            } catch (error) {
-                console.error(`❌ فشل في حفظ ملف ${fileField}: ${error.message}`);
-                throw error; // Re-throw to be caught by the outer try-catch
+                updateFields[field] = newValue;
             }
         }
-    };
+    });
+    // Handle file uploads
+    if (req.files && req.files.length > 0) {
+        try {
+            for (const file of req.files) {
+                const fileName = file.originalname;
+                const fileUrl = await saveFile(file, "projects", id.toString(), file.fieldname);
 
-    try {
-        // Update aerial view file if exists
-        await handleFileUpdate('aerial_view_file', 'aerial_view');
+                updateFields[file.fieldname] = {
+                    fileName,
+                    fileUrl
+                };
 
-        // Update illustrative view file if exists
-        await handleFileUpdate('illustrative_view_file', 'illustrative_view');
-
-        // Save update history if there are changes
-        if (changes.length > 0) {
-            project.updateHistory.push({
-                updatedBy: userId,
-                updatedAt: new Date(),
-                changes: changes
-            });
-            await project.save();
+                changes.push({
+                    action: 'اضافة',
+                    field: file.fieldname,
+                    oldValue: project[file.fieldname],
+                    newValue: {
+                        fileName,
+                        fileUrl
+                    }
+                });
+            }
+        } catch (fileError) {
+            return next(new ApiError(`فشل في رفع الملفات: ${fileError.message}`, 500));
         }
+    }
+    if (changes.length > 0) {
+        try {
+            updateFields.$push = {
+                updateHistory: {
+                    updatedBy: req.user._id,
+                    updatedAt: new Date(),
+                    changes
+                }
+            };
 
+            const updatedProject = await projectModel.findByIdAndUpdate(
+                id,
+                updateFields,
+                { new: true }
+            );
+
+            res.status(200).json({
+                status: "success",
+                message: "تم تعديل فيدوهات المشروع بنجاح",
+                data: updatedProject
+            });
+        } catch (updateError) {
+            return next(new ApiError(`فشل في تحديث المشروع: ${updateError.message}`, 500));
+        }
+    } else {
         res.status(200).json({
-            status: 'success',
-            message: 'تم تحديث عروض المشروع بنجاح',
+            status: "success",
+            message: "لم يتم اجراء اي تغيرات على المشروع",
             data: project
         });
-
-    } catch (error) {
-        return next(new ApiError(`حدث خطأ أثناء تحديث ملفات المشروع: ${error.message}`, 500));
     }
 });
 
@@ -666,10 +691,8 @@ exports.AddProjectValues = asyncHandler(async (req, res, next) => {
  *  @method Get
  *  @access view project 
  */
+
 exports.getAllProjects = factory.getAll(projectModel);
-
-
-
 
 /**
  *  @description Get specific project
@@ -1113,3 +1136,28 @@ function addToUpdateHistory(project, userId, field, oldValue, newValue, action =
         newValue
     });
 }
+
+
+
+/**
+ * @description Show project model schema/keys with Arabic labels
+ * @route /api/v1/projects/schema
+ * @method GET
+ * @access view_project_schema
+ */
+exports.showSchema = asyncHandler(async (req, res, next) => {
+    try {
+        const response = {
+            status: 'success',
+            data: {
+                schema: projectJSON
+            }
+        };
+
+        res.status(200).json(response);
+    } catch (error) {
+        console.error('Error getting schema:', error);
+        return next(new ApiError('حدث خطأ أثناء جرد حقول المشروع', 500));
+    }
+});
+

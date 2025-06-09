@@ -1,0 +1,52 @@
+{
+    "username": {
+    "label": "اسم المستخدم"
+    },
+    "password": {
+    "label": "كلمة المرور"
+    },
+    "phoneNumber": {
+    "label": "رقم الهاتف"
+    },
+    "national_ID": {
+    "label": "الرقم القومي"
+    },
+    "address": {
+    "label": "العنوان"
+    },
+    "role": {
+    "label": "الدور"
+    },
+    "gender": {
+    "label": "النوع"
+    },
+    "permissions": {
+    "label": "الصلاحيات"
+    },
+    "isDeleted": {
+    "label": "تم الحذف"
+    },
+    "deletedBy": {
+    "label": "تم الحذف بواسطة"
+    },
+    "updateHistory": {
+    "label": "سجل التعديلات",
+    "subKeys": {
+    "updatedBy": {
+    "label": "تم التعديل بواسطة"
+    },
+    "updatedAt": {
+    "label": "تاريخ التعديل"
+    }
+    }
+    },
+    "profileImage": {
+    "label": "صورة الملف الشخصي"
+    },
+    "createdAt": {
+    "label": "تاريخ الإنشاء"
+    },
+    "updatedAt": {
+    "label": "تاريخ التعديل الأخير"
+    }
+    }

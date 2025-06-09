@@ -10,18 +10,27 @@ class ApiFeatures {
         const queryObj = { ...this.queryString };
         excludeFields.forEach(field => delete queryObj[field]);
 
-        // إزالة المفاتيح التي قيمتها فارغة، `undefined` أو `null` + التعامل مع Boolean
-        Object.entries(queryObj).forEach(([key, value]) => {
-            if (!value || value.trim() === "") {
-                delete queryObj[key];  // حذف المفتاح نهائيًا
+        // تحويل operators إلى MongoDB operators
+        let queryStr = JSON.stringify(queryObj);
+        queryStr = queryStr.replace(/\b(gte|gt|lte|lt|ne|in|nin|exists)\b/g, match => `$${match}`);
+
+        const finalQuery = JSON.parse(queryStr);
+
+        // حذف الفارغين + التعامل مع Boolean
+        Object.entries(finalQuery).forEach(([key, value]) => {
+            if (!value || value === "" || value === null) {
+                delete finalQuery[key];
+            } else if (typeof value === "object" && value.$exists !== undefined) {
+                value.$exists = value.$exists === "true"; // تحويل exists لقيمة Boolean
             } else if (key === "isDeleted") {
-                queryObj[key] = value === "true";  // تحويل إلى Boolean
+                finalQuery[key] = value === "true";
             }
         });
 
-        this.mongooseQuery = this.mongooseQuery.find(queryObj);
+        this.mongooseQuery = this.mongooseQuery.find(finalQuery);
         return this;
     }
+
 
     // Sort
     sort() {
@@ -79,15 +88,29 @@ class ApiFeatures {
     populate() {
         if (this.queryString.populate) {
             const populateFields = this.queryString.populate.split(",");
-            this.mongooseQuery = this.mongooseQuery.populate(
-                populateFields.map(field => {
-                    const [path, select] = field.split(":");
-                    if (select) {
-                        return { path, select: select.replace(/,/g, " ") };
-                    }
-                    return { path };
-                })
-            );
+
+            const buildPopulate = (pathStr) => {
+                const [path, select] = pathStr.split(":");
+
+                // Nested populate
+                if (path.includes(".")) {
+                    const parts = path.split(".");
+                    return {
+                        path: parts[0],
+                        populate: {
+                            path: parts[1],
+                            select: select ? select.replace(/,/g, " ") : undefined
+                        }
+                    };
+                }
+
+                return {
+                    path,
+                    select: select ? select.replace(/,/g, " ") : undefined
+                };
+            };
+
+            this.mongooseQuery = this.mongooseQuery.populate(populateFields.map(buildPopulate));
         }
         return this;
     }

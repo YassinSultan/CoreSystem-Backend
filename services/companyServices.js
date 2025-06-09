@@ -1,7 +1,9 @@
 const asyncHandler = require('express-async-handler');
 const companyModel = require('../models/companyModel');
+const estimateModel = require("../models/estimateModel");;
 const ApiError = require('../utils/apiError');
-const factory = require('../utils/crudUtils'); const { saveFile } = require('../utils/fileHandler');
+const factory = require('../utils/crudUtils');
+const { saveFile } = require('../utils/fileHandler');
 
 
 exports.createCompany = asyncHandler(async (req, res, next) => {
@@ -47,8 +49,9 @@ exports.createCompany = asyncHandler(async (req, res, next) => {
     });
 });
 
-// جلب جميع الشركات
+// جلب جميع الشركات مع تفاصيل المقايسات والعقود مع دعم التصفية والترتيب والتقسيم إلى صفحات
 exports.getAllCompanies = factory.getAll(companyModel);
+
 
 // جلب شركة معينة
 exports.getCompanyById = factory.getOne(companyModel);

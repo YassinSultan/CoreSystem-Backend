@@ -1,0 +1,14 @@
+{
+    "estimate": {
+    "label": "المقايسة"
+    },
+    "allocatedQuantity": {
+    "label": "الكمية المخصصة"
+    },
+    "disbursedQuantity": {
+    "label": "الكمية المنصرفة"
+    },
+    "discountedQuantityOnTheContract": {
+    "label": "الكمية المخصصة لكل العقود"
+    }
+    }

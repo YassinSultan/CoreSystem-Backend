@@ -1,0 +1,162 @@
+{
+  "estimate": {
+    "label": "المقايسة"
+  },
+
+  "type": {
+    "label": "نوع المستخلص"
+  },
+
+  "number": {
+    "label": "رقم الدفعة"
+  },
+
+  "amount": {
+    "label": "قيمة المستخلص"
+  },
+
+  "abstractFile": {
+    "label": "ملف المستخلص",
+    "subKeys": {
+      "fileName": {
+        "label": "اسم الملف"
+      },
+      "fileUrl": {
+        "label": "رابط الملف"
+      }
+    }
+  },
+
+  "attachmentFile": {
+    "label": "المرفقات",
+    "subKeys": {
+      "fileName": {
+        "label": "اسم الملف"
+      },
+      "fileUrl": {
+        "label": "رابط الملف"
+      }
+    }
+  },
+
+  "steelUnitPrice": {
+    "label": "فئة الحديد"
+  },
+
+  "steelTotal": {
+    "label": "إجمالي الحديد"
+  },
+
+  "cementUnitPrice": {
+    "label": "فئة الاسمنت"
+  },
+
+  "cementTotal": {
+    "label": "إجمالي الاسمنت"
+  },
+
+  "ceramicsQuantity": {
+    "label": "إجمالي الخصم للسيراميك"
+  },
+
+  "marbleQuantity": {
+    "label": "إجمالي الخصم للرخام"
+  },
+
+  "bricksQuantity": {
+    "label": "كمية الطوب"
+  },
+
+  "bricksUnitPrice": {
+    "label": "فئة الطوب"
+  },
+
+  "deliveryDate": {
+    "label": "تاريخ التسليم"
+  },
+
+  "subReport": {
+    "label": "التمام الفرعي"
+  },
+
+  "subReportDate": {
+    "label": "تاريخ التمام الفرعي"
+  },
+
+  "dateAbstractManagement": {
+    "label": "تاريخ التعديل الإداري"
+  },
+
+  "procedureAbstractManagement": {
+    "label": "إجراء التعديل الإداري"
+  },
+
+  "statusAbstractManagement": {
+    "label": "الموقف للتعديل الإداري للاجراء جاري"
+  },
+
+  "nameAbstractManagement": {
+    "label": "اسم المراجع الإداري للاجراء جاري"
+  },
+
+  "notesAbstractManagement": {
+    "label": "ملاحظات التعديل الإداري"
+  },
+
+  "dateAbstractFinancial": {
+    "label": "تاريخ التعديل المالي"
+  },
+
+  "dateAbstractCentral": {
+    "label": "تاريخ التعديل الإداري المركزي"
+  },
+
+  "codeAbstractCentral": {
+    "label": "رقم استمارة الإداري المركزي"
+  },
+
+  "createdBy": {
+    "label": "أنشأ بواسطة"
+  },
+
+  "isDeleted": {
+    "label": "تم الحذف"
+  },
+
+  "deletedBy": {
+    "label": "تم الحذف بواسطة"
+  },
+
+  "deletedAt": {
+    "label": "تاريخ الحذف"
+  },
+  
+  "updateHistory": {
+    "label": "سجل التعديلات",
+    "subKeys": {
+      "updatedBy": {
+        "label": "تم التعديل بواسطة"
+      },
+      "updatedAt": {
+        "label": "تاريخ التعديل"
+      },
+      "changes": {
+        "label": "التعديلات",
+        "subKeys": {
+          "action": {
+            "label": "العملية"
+          },
+          "field": {
+            "label": "اسم الحقل المعدل"
+          },
+          "oldValue": {
+            "label": "القيمة القديمة"
+          },
+          "newValue": {
+            "label": "القيمة الجديدة"
+          }
+        }
+      }
+    }
+  }
+}

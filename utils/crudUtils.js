@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler');
 const _ = require('lodash');
 const ApiError = require('./apiError');
 const ApiFeatures = require('./apiFeatures');
-const { saveFile, deleteFile, deleteFolder } = require("../utils/fileHandler");
+const { saveFile } = require("../utils/fileHandler");
 
 exports.createOne = (Model) => asyncHandler(async (req, res) => {
     // ✅ 1️⃣ تحويل القيم النصية إلى JSON إذا كانت Array أو Object

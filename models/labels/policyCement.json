@@ -1,0 +1,45 @@
+{
+    "policyNumber": {
+    "label": "رقم البوليصة"
+    },
+    "policyDate": {
+    "label": "تاريخ البوليصة"
+    },
+    "company": {
+    "label": "اسم الشركة"
+    },
+    "cementType": {
+    "label": "نوع الأسمنت"
+    },
+    "cementGrade": {
+    "label": "رتبة الأسمنت"
+    },
+    "quantity": {
+    "label": "الكمية"
+    },
+    "policyFile": {
+    "label": "ملف البوليصة",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+    "companyRecieveFile": {
+    "label": "ملف استلام الشركة",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+    "recievedName": {
+    "label": "اسم المستلم"
+    }
+    }

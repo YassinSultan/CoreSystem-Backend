@@ -19,6 +19,10 @@ const estimateSchema = new mongoose.Schema({
     name: {
         type: String, required: [true, 'اسم المقايسة مطلوب']
     },
+    // نوع المقايسة
+    estimateType: {
+        type: Array, required: [true, 'نوع المقايسة مطلوب']
+    },
     // قيمة المقايسة
     value: {
         type: Number, required: [true, 'قيمة المقايسة مطلوبة']
@@ -26,6 +30,9 @@ const estimateSchema = new mongoose.Schema({
     // المسطح
     area: {
         type: Number, required: [true, 'مسطح المقايسة مطلوب']
+    },
+    lengthOfLinearMeter: {
+        type: Number, required: [true, 'طول المتر الطولي مطلوب']
     },
     // مستند اثبات الكتيبة
     battalionProofDocument: fileSchema,
@@ -37,9 +44,58 @@ const estimateSchema = new mongoose.Schema({
     shopDrawingsDWGFile: fileSchema,
     // اللوحات التنفيذية PDF
     shopDrawingsPDFFile: fileSchema,
+    offersAndPriceAnalisisFile: fileSchema,
+    // سعر الحديد
+    ironPrice: {
+        type: Number,
+    },
+    // سعر الاسمنت
+    cementPrice: {
+        type: Number,
+    },
     // ! =============== الخطوة الثانية الادارة ===============
-    // قيمة المقايسة للادارة
-    estimateValueForManagement: {
+    /*   const estimateTypeKeys = {
+    اعتيادي: "normal",
+    كهرباء: "electric",
+    تكييف: "ac",
+    حريق: "fire",
+    صحي: "plumbing",
+    صيانة: "maintenance",
+  }; */
+    value_normal: {
+        type: Number,
+    },
+    value_electric: {
+        type: Number,
+    }
+    , value_ac: {
+        type: Number,
+    }
+    , value_fire: {
+        type: Number,
+    }
+    , value_plumbing: {
+        type: Number,
+    }
+    , value_maintenance: {
+        type: Number,
+    },
+    duration_normal: {
+        type: Number,
+    },
+    duration_electric: {
+        type: Number,
+    }
+    , duration_ac: {
+        type: Number,
+    }
+    , duration_fire: {
+        type: Number,
+    }
+    , duration_plumbing: {
+        type: Number,
+    }
+    , duration_maintenance: {
         type: Number,
     },
     // رقم المقايسة
@@ -48,16 +104,48 @@ const estimateSchema = new mongoose.Schema({
         unique: true,
     },
     //! =============== الخطوة الثالثة الادارة ===============
-    // قيمة المقايسة للهينة
-    estimateValueForAuthority: {
+    /*  const estimateTypeKeys = {
+    اعتيادي: "normal",
+    كهرباء: "electric",
+    تكييف: "ac",
+    حريق: "fire",
+    صحي: "plumbing",
+    صيانة: "maintenance",
+  }; */
+    value_authority_normal: {
         type: Number,
     },
-    // سعر الحديد
-    ironPrice: {
+    value_authority_electric: {
+        type: Number,
+    }
+    , value_authority_ac: {
+        type: Number,
+    }
+    , value_authority_fire: {
+        type: Number,
+    }
+    , value_authority_plumbing: {
+        type: Number,
+    }
+    , value_authority_maintenance: {
         type: Number,
     },
-    // سعر الاسمنت
-    cementPrice: {
+    duration_authority_normal: {
+        type: Number,
+    },
+    duration_authority_electric: {
+        type: Number,
+    }
+    , duration_authority_ac: {
+        type: Number,
+    }
+    , duration_authority_fire: {
+        type: Number,
+    }
+    , duration_authority_plumbing: {
+        type: Number,
+    }
+    , duration_authority_maintenance: {
         type: Number,
     },
     // ==============================
@@ -91,6 +179,7 @@ const estimateSchema = new mongoose.Schema({
             type: String,
         }
     },
+    // قيمة التعاقد
     contractValue: {
         type: Number
     },

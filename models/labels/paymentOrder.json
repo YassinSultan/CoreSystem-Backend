@@ -1,0 +1,96 @@
+{
+    "project": {
+    "label": "اسم المشروع"
+    },
+
+    "contractingAuthority": {
+    "label": "جهة التعاقد"
+    },
+
+    "financialAllocationDate": {
+    "label": "تاريخ جواب المخصص المالي"
+    },
+    "financialAllocationValue": {
+    "label": "قيمة المخصص المالي"
+    },
+    "correspondenceNumber": {
+    "label": "رقم المخاطبة"
+    },
+    "correspondenceFile": {
+    "label": "ملف المخاطبة",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+    "paymentOrderDate": {
+    "label": "تاريخ أمر الدفع"
+    },
+    "paymentOrderValue": {
+    "label": "قيمة أمر الدفع"
+    },
+    "paymentOrderNumber": {
+    "label": "رقم أمر الدفع"
+    },
+    "paymentOrderFile": {
+    "label": "ملف أمر الدفع",
+    "subKeys": {
+    "fileName": {
+    "label": "اسم الملف"
+    },
+    "fileUrl": {
+    "label": "رابط الملف"
+    }
+    }
+    },
+    "paymentOrderDetails": {
+    "label": "بيان أمر الدفع"
+    },
+    "isDeleted": {
+    "label": "تم الحذف"
+    },
+    "deletedBy": {
+    "label": "تم الحذف بواسطة"
+    },
+    "deletedAt": {
+    "label": "تاريخ الحذف"
+    },
+    "updateHistory": {
+    "label": "تاريخ التعديلات",
+    "subKeys": {
+    "updatedBy": {
+    "label": "تم التعديل بواسطة"
+    },
+    "updatedAt": {
+    "label": "تاريخ التعديل"
+    },
+    "changes": {
+    "label": "التغييرات",
+    "subKeys": {
+    "action": {
+    "label": "الإجراء"
+    },
+    "field": {
+    "label": "اسم الحقل المتغير"
+    },
+    "oldValue": {
+    "label": "القيمة القديمة"
+    },
+    "newValue": {
+    "label": "القيمة الجديدة"
+    }
+    }
+    }
+    }
+    },
+    "createdAt": {
+    "label": "تاريخ الإنشاء"
+    },
+    "updatedAt": {
+    "label": "آخر تحديث"
+    }
+    }

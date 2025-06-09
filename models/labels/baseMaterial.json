@@ -1,0 +1,59 @@
+{
+    "project": {
+      "label": "اسم المشروع"
+    },
+
+    "type": {
+      "label": "نوع الخام"
+    },
+
+    "transactionType": {
+      "label": "نوع المعاملة"
+    },
+
+    "createdBy": {
+      "label": "أنشأ بواسطة"
+    },
+
+    "isDeleted": {
+      "label": "تم الحذف"
+    },
+
+    "deletedBy": {
+      "label": "تم الحذف بواسطة"
+    },
+
+    "deletedAt": {
+      "label": "تاريخ الحذف"
+    },
+    
+    "updateHistory": {
+      "label": "تاريخ التعديل",
+      "subKeys": {
+        "updatedBy": {
+          "label": "تم التعديل بواسطة"
+        },
+        "updatedAt": {
+          "label": "تاريخ التعديل"
+        },
+        "changes": {
+          "label": "التعديلات",
+          "subKeys": {
+            "action": {
+              "label": "الاجراء"
+            },
+            "field": {
+              "label": "الحقل المعدل"
+            },
+            "oldValue": {
+              "label": "القيمة القديمة"
+            },
+            "newValue": {
+              "label": "القيمة الجديدة"
+            }
+          }
+        }
+      }
+    }
+  }
+  

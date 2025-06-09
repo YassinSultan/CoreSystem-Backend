@@ -1,0 +1,46 @@
+{
+"tafwidFile": {
+"label": "ملف التفويض",
+"subKeys": {
+"fileName": {
+"label": "اسم الملف"
+},
+"fileUrl": {
+"label": "رابط الملف"
+}
+}
+},
+
+"tafwidNumber": {
+"label": "رقم التفويض"
+},
+
+"factoryName": {
+"label": "اسم المصنع"
+},
+
+"tafwidQuantity": {
+"label": "كمية التفويض"
+},
+
+"supplyOrder": {
+"label": "أمر التوريد"
+},
+
+"officers": {
+"label": "الضباط",
+"subKeys": {
+"name": {
+"label": "اسم الضابط"
+}
+}
+},
+
+"shippingCompany": {
+"label": "شركة الشحن"
+},
+
+"mawqfAlTafwid": {
+"label": "موقف التفويض"
+}
+}
