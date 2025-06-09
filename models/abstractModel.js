@@ -46,6 +46,10 @@ const abstractSchema = new mongoose.Schema({
     abstractComments: {
         type: String
     },
+    // نوع المستخلص
+    abstractType: {
+        type: String
+    },
     // ! تعديل قيادة اللواء
     // تاريخ التسليم
     deliveryDate: {
@@ -132,4 +136,4 @@ const abstractSchema = new mongoose.Schema({
         }
     ],
 }, { timestamps: true });
-module.exports = mongoose.model("Aabstract", abstractSchema);
+module.exports = mongoose.model("Abstract", abstractSchema);

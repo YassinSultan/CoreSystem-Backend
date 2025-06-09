@@ -20,6 +20,7 @@ exports.createAbstract = asyncHandler(async (req, res, next) => {
         bricksQuantity: req.body.bricksQuantity,
         bricksUnitPrice: req.body.bricksUnitPrice,
         abstractComments: req.body.abstractComments,
+        abstractType: req.body.abstractType,
         createdBy: req.user._id
     });
     try {
@@ -59,7 +60,7 @@ exports.updateAbstract = asyncHandler(async (req, res, next) => {
     }
     let updateFields = {};
     let changes = [];
-    ['estimate', 'type', 'enum', 'number', 'amount', 'abstractFile', 'attachmentFile', 'steelUnitPrice', 'cementUnitPrice', 'ceramicsQuantity', 'ceramicsQuantity', 'bricksQuantity', 'bricksUnitPrice', 'abstractComments'].forEach(field => {
+    ['estimate', 'type', 'enum', 'number', 'amount', 'abstractFile', 'attachmentFile', 'steelUnitPrice', 'cementUnitPrice', 'ceramicsQuantity', 'ceramicsQuantity', 'bricksQuantity', 'bricksUnitPrice', 'abstractComments', 'abstractType'].forEach(field => {
         if (req.body[field] && req.body[field] !== abstract[field]) {
             changes.push({ action: req.body[field] == 'null' ? 'حذف' : 'تعديل', field, oldValue: abstract[field], newValue: req.body[field] });
             updateFields[field] = req.body[field] === 'null' ? JSON.parse(req.body[field]) : req.body[field];
